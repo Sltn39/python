@@ -12,8 +12,10 @@ else:
         n += s[i]
         if len(k) <= len(n) and (i == len(s) - 1):
             k = n
-    for j in range(index - 1, 0, -1):
+            index = i + 1
+    b = k
+    for j in range(index - len(b) -1, 0, -1):
         if s[j] not in k: 
             k = s[j] + k
         else: break
-    print(k) 
+    print(k)
