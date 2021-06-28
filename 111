@@ -1,6 +1,7 @@
-s = input()
-if s == "": print("пустая строка")
-else:
+import unittest
+
+
+def longest_substring(s):
     n, k = "", ""
     for i in range(len(s)):
         if s[i] in n:
@@ -10,4 +11,27 @@ else:
         n += s[i]
         if len(k) <= len(n) and i == len(s) - 1:
             k = n
-    print(k) 
+    return k
+
+
+class TestAll(unittest.TestCase):
+
+    def test_long_string(self):
+        assert longest_substring(
+            "1" * 100000 + "abcdefghijklmnopqrstuvwxyz" + "2" * 10000) == "1abcdefghijklmnopqrstuvwxyz2", "Must be equal to alphabet with boundaries of 1 and 2"
+
+    def test_spaces(self):
+        assert longest_substring("     ") == " ", "Must be one equal to one space"
+
+    def test_space(self):
+        assert longest_substring(" ") == " ", "Must be one space"
+
+    def test_unique(self):
+        assert longest_substring("abcdefghijklmnopqrstuvwxyz") == "abcdefghijklmnopqrstuvwxyz", "Must be unique"
+
+    def test_empty(self):
+        assert longest_substring("") == "", "Must be empty"
+
+
+if __name__ == "__main__":
+    unittest.main()
