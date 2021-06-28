@@ -1,4 +1,5 @@
 s = input()
+index = 0
 if s == "": print("пустая строка")
 else:
     n, k = "", ""
@@ -6,8 +7,14 @@ else:
         if s[i] in n:
             if len(k) <= len(n):
                 k = n
+                
+                index = i
             n = ""
         n += s[i]
-        if len(k) <= len(n) and i == len(s) - 1:
+        if len(k) <= len(n) and (i == len(s) - 1):
             k = n
-    print(k) 
+    for j in range(index, 0, -1):
+        if s[j] not in k: 
+            k = s[j] + k
+    print(k)   
+    print(index)
