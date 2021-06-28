@@ -17,4 +17,3 @@ else:
         if s[j] not in k: 
             k = s[j] + k
     print(k)   
-    print(index)
