@@ -6,8 +6,7 @@ else:
     for i in range(len(s)):
         if s[i] in n:
             if len(k) <= len(n):
-                k = n
-                
+                k = n             
                 index = i
             n = ""
         n += s[i]
