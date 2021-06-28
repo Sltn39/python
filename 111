@@ -1,0 +1,13 @@
+s = input()
+if s == "": print("пустая строка")
+else:
+    n, k = "", ""
+    for i in range(len(s)):
+        if s[i] in n:
+            if len(k) <= len(n):
+                k = n
+            n = ""
+        n += s[i]
+        if len(k) <= len(n) and i == len(s) - 1:
+            k = n
+    print(k) 
