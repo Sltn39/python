@@ -6,7 +6,7 @@ else:
     for i in range(len(s)):
         if s[i] in n:
             if len(k) <= len(n):
-                k = n             
+                k = n
                 index = i
             n = ""
         n += s[i]
@@ -15,4 +15,5 @@ else:
     for j in range(index, 0, -1):
         if s[j] not in k: 
             k = s[j] + k
-    print(k)   
+        else: break
+    print(k) 
